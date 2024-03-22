@@ -355,12 +355,44 @@
           null,
           null,
           null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
       "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/app/controllers/api/v1/users_controller.rb": {
         "lines": [
           1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
           null,
           null,
           1,
@@ -387,6 +419,6 @@
         ]
       }
     },
-    "timestamp": 1711136044
+    "timestamp": 1711136499
   }
 }

@@ -30,4 +30,30 @@ RSpec.describe 'Api::V1::Users', type: :request do
       end
     end
   end
+
+  describe "Users Show" do
+    it 'displays a users show page' do
+      user = User.create!(name: "John Summit", email: "jsums@example.com", password: "js123", password_confirmation: "js123")
+      id = user.id
+
+      get api_v1_user_path(id)
+
+      expect(response).to be_successful
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      user = json[:data]
+    
+      expect(user).to be_an(Hash)
+
+      expect(user).to have_key(:id)
+      expect(user[:id]).to be_an(String)
+
+      expect(user[:attributes]).to have_key(:name)
+      expect(user[:attributes][:name]).to be_a(String)
+
+      expect(user[:attributes]).to have_key(:email)
+      expect(user[:attributes][:email]).to be_a(String)
+    end
+  end
 end

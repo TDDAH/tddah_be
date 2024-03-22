@@ -7,7 +7,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
       user1 = User.create!(name: "Of the Trees", email: "ott@example.com", password: "ott123", password_confirmation: "ott123")
       user2 = User.create!(name: "Liquid Stranger", email: "liquid@example.com", password: "ls123", password_confirmation: "ls123")
 
-      get '/api/v1/users'
+      get api_v1_users_path
 
       expect(response).to be_successful
 

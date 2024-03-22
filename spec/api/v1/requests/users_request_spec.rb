@@ -3,7 +3,9 @@ require "rails_helper"
 RSpec.describe 'Api::V1::Users', type: :request do
   describe "Users Index" do
     it 'displays all the users' do
-      create_list(:user, 4)
+      user = User.create!(name: "John Summit", email: "jsums@example.com", password: "js123", password_confirmation: "js123")
+      user1 = User.create!(name: "Of the Trees", email: "ott@example.com", password: "ott123", password_confirmation: "ott123")
+      user2 = User.create!(name: "Liquid Stranger", email: "liquid@example.com", password: "ls123", password_confirmation: "ls123")
 
       get '/api/v1/users'
 
@@ -12,7 +14,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
       json = JSON.parse(response.body, symbolize_names: true)
 
       users = json[:data]
-      expect(users.count).to eq(4)
+      expect(users.count).to eq(3)
 
       users.each do |user|
         expect(users).to be_an(Array)

@@ -56,4 +56,45 @@ RSpec.describe 'Api::V1::Users', type: :request do
       expect(user[:attributes][:email]).to be_a(String)
     end
   end
+
+  describe "Users Create" do
+    it 'creates a user' do
+      user_params = { 
+        name: "Barclay Crenshaw",
+        email: "barclay@example.com",
+        password: "bass123",
+        password_confirmation: "bass123"
+      }
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
+
+      new_user = User.last
+
+      expect(response).to be_successful
+      expect(new_user.name).to eq(user_params[:name])
+      expect(new_user.email).to eq(user_params[:email])
+      expect(new_user.password).to eq(user_params[:password])
+      expect(new_user.password_confirmation).to eq(user_params[:password_confirmation])
+    end
+
+    it 'sad path- error if user is not created' do
+      user_params = { 
+        name: "",
+        email: "barclay@example.com",
+        password: "bass123",
+        password_confirmation: "bass123"
+      }
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
+
+      new_user = User.last
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(401)
+    end
+  end
 end

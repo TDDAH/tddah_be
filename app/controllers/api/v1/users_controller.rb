@@ -22,4 +22,12 @@ class Api::V1::UsersController < ApplicationController
       render json: user.errors, status: 401
     end
   end
+
+
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
 end

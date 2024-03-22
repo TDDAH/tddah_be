@@ -97,4 +97,18 @@ RSpec.describe 'Api::V1::Users', type: :request do
       expect(response).to have_http_status(401)
     end
   end
+
+  describe "Users destroy" do
+    it 'deletes a user' do
+      user = User.create!(name: "John Summit", email: "jsums@example.com", password: "js123", password_confirmation: "js123")
+    
+      expect(User.count).to eq(1)
+
+      delete api_v1_user_path(user.id)
+
+      expect(response).to be_successful
+      expect(User.count).to eq(0)
+      expect{User.find(user.id)}.to raise_error(ActiveRecord::RecordNotFound)
+    end
+  end
 end

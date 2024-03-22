@@ -23,6 +23,7 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
+  # DELETE /api/v1/users/:id
 
 
   private

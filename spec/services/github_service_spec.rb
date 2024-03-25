@@ -7,7 +7,6 @@ RSpec.describe "GithubService" do
     
     results = GithubService.new.get_simplecov_from_api(owner, name)
 
-    # expect(results).to be_a(Faraday::Response)
     expect(results).to be_a(Hash)
     expect(results).to have_key(:name)
     expect(results).to have_key(:content)
@@ -23,6 +22,8 @@ RSpec.describe "GithubService" do
 
     expect(decoded_content).not_to be_nil
     expect(parsed_content).not_to be_nil
-    expect(parsed_content[:coverage_summary]).to eq("86.05%")
+    expect(parsed_content[:covered_percent]).to eq("86.05%")
+    # require "pry"; binding.pry
+    # expect(parsed_content.covered_percent_to_i).to eq(86.05)
   end
 end

@@ -14,7 +14,11 @@ class RepoFacade
 
   def self.parse_coverage(content)
     doc = Nokogiri::HTML(content)
-    coverage_summary = doc.css('.group_name + span').text.strip
-    { coverage_summary: coverage_summary }
+    covered_percent = doc.css('.group_name + span').text.strip
+    { covered_percent: covered_percent }
   end
+
+  # def self.covered_percent_to_i(covered_percent)
+  #   covered_percent.gsub("%", "").to_f
+  # end
 end

@@ -1,5 +1,5 @@
 class GithubService
-  def get_repo_from_api(owner, name)
+  def get_simplecov_from_api(owner, name)
     get_uri("repos/#{owner}/#{name}"/contents/coverage/index.html)
   end
 

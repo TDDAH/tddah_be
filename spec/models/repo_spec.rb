@@ -1,9 +1,9 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Repo, type: :model do
-  describe 'validations' do
-    it { should validate_presence_of(:owner)}
-    it { should validate_presence_of(:name)}
+  describe "validations" do
+    it { should validate_presence_of(:owner) }
+    it { should validate_presence_of(:name) }
   end
 
   it "exists" do

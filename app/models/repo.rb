@@ -1,6 +1,6 @@
 class Repo < ApplicationRecord
-  it belongs_to :user
+  belongs_to :user
 
-  it validates :owner, presence: :true
-  it validates :name, presence: :true
+  validates :owner, presence: :true
+  validates :name, presence: :true
 end

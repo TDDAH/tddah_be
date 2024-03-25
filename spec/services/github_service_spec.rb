@@ -18,8 +18,11 @@ RSpec.describe "GithubService" do
     name = "lunch_and_learn_be_7"
     
     results = GithubService.new.get_simplecov_from_api(owner, name)
-require "pry"; binding.pry
-    decoded_content = RepoFacade.hack_the_code(results)
+    decoded_content = RepoFacade.decode_coverage(results)
+    parsed_content = RepoFacade.parse_coverage(decoded_content)
+
     expect(decoded_content).not_to be_nil
+    expect(parsed_content).not_to be_nil
+    expect(parsed_content[:coverage_summary]).to eq("86.05%")
   end
 end

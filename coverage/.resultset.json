@@ -1,6 +1,11 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/s2an/turing/4mod/tddah_be/spec/facades/repo_spec.rb": {
+        "lines": [
+
+        ]
+      },
       "/Users/s2an/turing/4mod/tddah_be/spec/models/repo_spec.rb": {
         "lines": [
           1,
@@ -468,6 +473,35 @@
           null
         ]
       },
+      "/Users/s2an/turing/4mod/tddah_be/spec/services/github_service_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
       "/Users/s2an/turing/4mod/tddah_be/app/controllers/api/v1/users_controller.rb": {
         "lines": [
           1,
@@ -524,8 +558,44 @@
           1,
           null
         ]
+      },
+      "/Users/s2an/turing/4mod/tddah_be/app/services/github_service.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/s2an/turing/4mod/tddah_be/app/facades/repo_facade.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1711384442
+    "timestamp": 1711389496
   }
 }

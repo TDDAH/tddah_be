@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2024-03-26T14:07:07-04:00">2024-03-26T14:07:07-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2024-03-26T14:09:54-04:00">2024-03-26T14:09:54-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -73,7 +73,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#97ee59e422a6b7b1d0515a6e4d0e632c3ba942d2" class="src_link" title="app/controllers/api/v1/repos_controller.rb">app/controllers/api/v1/repos_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">15</td>
+            <td class="cell--number">7</td>
             <td class="cell--number">5</td>
             <td class="cell--number">5</td>
             <td class="cell--number">0</td>
@@ -282,7 +282,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#71e4232e3f21970692be1f20a703765e1b468cee" class="src_link" title="spec/requests/api/v1/repos_request_spec.rb">spec/requests/api/v1/repos_request_spec.rb</a></td>
             <td class="yellow strong cell--number t-file__coverage">90.00 %</td>
-            <td class="cell--number">22</td>
+            <td class="cell--number">17</td>
             <td class="cell--number">10</td>
             <td class="cell--number">9</td>
             <td class="cell--number">1</td>
@@ -406,7 +406,7 @@
 
             
 
-            <code class="ruby">    user_id = params[:user_id]</code>
+            <code class="ruby">    render json: RepoFacade.package_coverage_file_for_FE(params[:user_id], params[:id])</code>
           </li>
         </div>
       
@@ -417,101 +417,13 @@
 
             
 
-            <code class="ruby">    repo_id = params[:id]</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
           <li class="covered" data-hits="1" data-linenumber="7">
             <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    render json: RepoFacade.package_coverage_file_for_FE(user_id, repo_id)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
-            
-
-            <code class="ruby">    # user = User.find(params[:user_id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
-
-            
-
-            <code class="ruby">    # repo = user.repos.find(params[:id])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="10">
-            
-            
-
-            
-
-            <code class="ruby">    # file_content = RepoFacade.get_coverage_file(repo.owner, repo.name)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-            
-
-            
-
-            <code class="ruby">    # # require &quot;pry&quot;; binding.pry</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby">    # # render json: RepoSerializer.new(file_content).serializable_hash.to_json</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="13">
-            
-            
-
-            
-
-            <code class="ruby">    # render json: RepoSerializer.new(file_content, {params: {owner: repo.owner, name: repo.name}}).serializable_hash.to_json</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="14">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
             
 
             
@@ -5153,7 +5065,7 @@
 
             
 
-            <code class="ruby">      # require &quot;pry&quot;; binding.pry</code>
+            <code class="ruby">      get api_v1_user_repo_path(@user, @repo)</code>
           </li>
         </div>
       
@@ -5164,7 +5076,7 @@
 
             
 
-            <code class="ruby">      get api_v1_user_repo_path(@user, @repo)</code>
+            <code class="ruby">      </code>
           </li>
         </div>
       
@@ -5175,7 +5087,7 @@
 
             
 
-            <code class="ruby">require &quot;pry&quot;; binding.pry</code>
+            <code class="ruby">      expect(response).to be_successful</code>
           </li>
         </div>
       
@@ -5186,7 +5098,7 @@
 
             
 
-            <code class="ruby">      expect(response).to be_successful</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -5197,67 +5109,12 @@
 
             
 
-            <code class="ruby">      </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
-            
-
-            
-
-            <code class="ruby">      # json = JSON.parse(response.body, symbolize_names: true)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="18">
-            
-            
-
-            
-
-            <code class="ruby">      # repo = json[:data]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="19">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="20">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="21">
-            
-            
-
-            
-
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="22">
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 

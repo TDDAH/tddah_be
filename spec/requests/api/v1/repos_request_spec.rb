@@ -9,14 +9,9 @@ RSpec.describe "Api::V1::Repos", type: :request do
 
   describe "Repos Show" do
     it "displays the repo's SimpleCov percentage" do
-      # require "pry"; binding.pry
       get api_v1_user_repo_path(@user, @repo)
-require "pry"; binding.pry
-      expect(response).to be_successful
       
-      # json = JSON.parse(response.body, symbolize_names: true)
-      # repo = json[:data]
-
+      expect(response).to be_successful
     end
   end
 end

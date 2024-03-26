@@ -4,7 +4,9 @@ class RepoFacade
 
   def self.get_file(owner, name)
     service = GithubService.new
-    service.get_simplecov_from_api(owner, name)
+    response = service.get_simplecov_from_api(owner, name)
+    decoded_content = decode_coverage(response)
+    parse_coverage(decoded_content)
   end
 
   def self.decode_coverage(response)

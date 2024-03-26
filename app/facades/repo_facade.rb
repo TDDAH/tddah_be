@@ -2,7 +2,7 @@ class RepoFacade
   require "base64"
   require "nokogiri"
 
-  def self.get_file(owner, name)
+  def self.get_coverage_file(owner, name)
     service = GithubService.new
     response = service.get_simplecov_from_api(owner, name)
     decoded_content = decode_coverage(response)
@@ -20,6 +20,7 @@ class RepoFacade
     { covered_percent: covered_percent }
   end
 
+  # in case we need to convert the covered_percent to a float
   # def self.covered_percent_to_i(covered_percent)
   #   covered_percent.gsub("%", "").to_f
   # end

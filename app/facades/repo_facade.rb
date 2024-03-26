@@ -2,6 +2,24 @@ class RepoFacade
   require "base64"
   require "nokogiri"
 
+  def self.package_coverage_file_for_FE(user_id, repo_id)
+    user = User.find(user_id)
+    repo = user.repos.find(repo_id)
+    file_content = get_coverage_file(repo.owner, repo.name)
+    {
+      data: {
+        id: repo.id,
+        type: "repo",
+        attributes: {
+          user: user.name,
+          owner: repo.owner,
+          name: repo.name,
+          covered_percent: file_content[:covered_percent]
+        }
+      }
+    }
+  end
+
   def self.get_coverage_file(owner, name)
     service = GithubService.new
     response = service.get_simplecov_from_api(owner, name)

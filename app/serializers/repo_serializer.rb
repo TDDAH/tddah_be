@@ -5,6 +5,6 @@ class RepoSerializer
   attributes :owner, :name
 
   attribute :id do |repo|
-    repo.id
+    repo.id.to_s
   end
 end

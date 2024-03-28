@@ -1,7 +1,12 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/spec/models/user_spec.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/spec/facades/repo_spec.rb": {
+        "lines": [
+
+        ]
+      },
+      "/Users/s2an/turing/4mod/tddah_be/spec/models/repo_spec.rb": {
         "lines": [
           1,
           null,
@@ -9,20 +14,17 @@
           1,
           2,
           2,
-          2,
-          2,
-          2,
-          null,
           null,
           null,
           1,
           1,
           1,
+          null,
           null,
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/spec/rails_helper.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -97,7 +99,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/config/environment.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -106,7 +108,7 @@
           1
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/config/application.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/config/application.rb": {
         "lines": [
           1,
           null,
@@ -154,7 +156,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/config/boot.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -162,7 +164,7 @@
           1
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/config/environments/test.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -230,7 +232,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/config/initializers/cors.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/config/initializers/cors.rb": {
         "lines": [
           null,
           null,
@@ -250,7 +252,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/config/initializers/filter_parameter_logging.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -262,7 +264,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/config/initializers/inflections.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -282,7 +284,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/config/routes.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/config/routes.rb": {
         "lines": [
           1,
           null,
@@ -297,31 +299,91 @@
           1,
           1,
           1,
+          1,
+          null,
           null,
           null,
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/app/models/user.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/app/models/repo.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/s2an/turing/4mod/tddah_be/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/s2an/turing/4mod/tddah_be/spec/models/user_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null,
           1,
           1,
           1,
+          null,
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/app/models/application_record.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/app/models/user.rb": {
         "lines": [
           1,
           1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/spec/requests/api/v1/users_request_spec.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/spec/requests/api/v1/repos_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/s2an/turing/4mod/tddah_be/spec/requests/api/v1/users_request_spec.rb": {
         "lines": [
           1,
           null,
@@ -422,10 +484,165 @@
           1,
           null,
           null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/app/controllers/api/v1/users_controller.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/spec/services/github_service_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          3,
+          3,
+          3,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/s2an/turing/4mod/tddah_be/app/controllers/api/v1/repos_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/s2an/turing/4mod/tddah_be/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/s2an/turing/4mod/tddah_be/app/serializers/repo_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/s2an/turing/4mod/tddah_be/app/facades/repo_facade.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          3,
+          3,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/s2an/turing/4mod/tddah_be/app/services/github_service.rb": {
+        "lines": [
+          1,
+          1,
+          4,
+          null,
+          null,
+          1,
+          4,
+          4,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null
+        ]
+      },
+      "/Users/s2an/turing/4mod/tddah_be/app/poros/coverage/repo.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/s2an/turing/4mod/tddah_be/app/controllers/api/v1/users_controller.rb": {
         "lines": [
           1,
           null,
@@ -453,6 +670,10 @@
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          null,
           null,
           1,
           null,
@@ -462,13 +683,7 @@
           null
         ]
       },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/mirandadelaney/Desktop/mod4/capstone/tddah_be/app/serializers/user_serializer.rb": {
+      "/Users/s2an/turing/4mod/tddah_be/app/serializers/user_serializer.rb": {
         "lines": [
           1,
           null,
@@ -479,6 +694,6 @@
         ]
       }
     },
-    "timestamp": 1711137506
+    "timestamp": 1711648816
   }
 }

@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2024-03-26T17:38:17-04:00">2024-03-26T17:38:17-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2024-03-28T14:00:16-04:00">2024-03-28T14:00:16-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  99.6%
+  99.61%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.2
+         1.19
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>250</b> relevant lines,
-    <span class="green"><b>249</b> lines covered</span> and
+    <b>255</b> relevant lines,
+    <span class="green"><b>254</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed. </span>
     (<span class="green">
-  99.6%
+  99.61%
 </span>
 )
   </div>
@@ -73,7 +73,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#97ee59e422a6b7b1d0515a6e4d0e632c3ba942d2" class="src_link" title="app/controllers/api/v1/repos_controller.rb">app/controllers/api/v1/repos_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">10</td>
+            <td class="cell--number">7</td>
             <td class="cell--number">3</td>
             <td class="cell--number">3</td>
             <td class="cell--number">0</td>
@@ -150,7 +150,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#8f05f6684076ea03479ea13bf1b0ba95cc22ddcb" class="src_link" title="app/poros/coverage/repo.rb">app/poros/coverage/repo.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">26</td>
+            <td class="cell--number">13</td>
             <td class="cell--number">9</td>
             <td class="cell--number">9</td>
             <td class="cell--number">0</td>
@@ -326,9 +326,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#71e4232e3f21970692be1f20a703765e1b468cee" class="src_link" title="spec/requests/api/v1/repos_request_spec.rb">spec/requests/api/v1/repos_request_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">9</td>
-            <td class="cell--number">9</td>
+            <td class="cell--number">22</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">14</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -461,7 +461,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -472,40 +472,7 @@
 
             
 
-            <code class="ruby">    # render json: RepoSerializer.new(RepoFacade.get_coverage_file(params[:user_id], params[:id]))</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
-
-            
-
             <code class="ruby">end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="10">
-            
-            
-
-            
-
-            <code class="ruby"># render json: RepoFacade.package_coverage_file_for_FE(params[:user_id], params[:id])</code>
           </li>
         </div>
       
@@ -1855,7 +1822,7 @@
 
             
 
-            <code class="ruby">    def initialize(id:, user:, owner:, name:, covered_percent:)</code>
+            <code class="ruby">    def initialize(data)</code>
           </li>
         </div>
       
@@ -1866,7 +1833,7 @@
 
             
 
-            <code class="ruby">      @id = id</code>
+            <code class="ruby">      @id = data[:id]</code>
           </li>
         </div>
       
@@ -1877,7 +1844,7 @@
 
             
 
-            <code class="ruby">      @user = user</code>
+            <code class="ruby">      @user = data[:user]</code>
           </li>
         </div>
       
@@ -1888,7 +1855,7 @@
 
             
 
-            <code class="ruby">      @owner = owner</code>
+            <code class="ruby">      @owner = data[:owner]</code>
           </li>
         </div>
       
@@ -1899,7 +1866,7 @@
 
             
 
-            <code class="ruby">      @name = name</code>
+            <code class="ruby">      @name = data[:name]</code>
           </li>
         </div>
       
@@ -1910,7 +1877,7 @@
 
             
 
-            <code class="ruby">      @covered_percent = covered_percent</code>
+            <code class="ruby">      @covered_percent = data[:covered_percent]</code>
           </li>
         </div>
       
@@ -1944,149 +1911,6 @@
             
 
             <code class="ruby">end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="14">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-            
-
-            
-
-            <code class="ruby"># # module Coverage</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-            
-
-            
-
-            <code class="ruby">#   class Repo</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
-            
-
-            
-
-            <code class="ruby">#     attr_reader :id, :user, :owner, :name, :covered_percent</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="18">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="19">
-            
-            
-
-            
-
-            <code class="ruby">#     def initialize(data)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="20">
-            
-            
-
-            
-
-            <code class="ruby">#       @id = data[:id]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="21">
-            
-            
-
-            
-
-            <code class="ruby">#       @owner = data[:owner]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="22">
-            
-            
-
-            
-
-            <code class="ruby">#       @name = data[:name]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="23">
-            
-            
-
-            
-
-            <code class="ruby">#       @covered_percent = data[:covered_percent]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="24">
-            
-            
-
-            
-
-            <code class="ruby">#     end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="25">
-            
-            
-
-            
-
-            <code class="ruby">#   end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="26">
-            
-            
-
-            
-
-            <code class="ruby"># # end</code>
           </li>
         </div>
       
@@ -5896,8 +5720,8 @@
     
 
     <div class="t-line-summary">
-      <b>9</b> relevant lines.
-      <span class="green"><b>9</b> lines covered</span> and
+      <b>14</b> relevant lines.
+      <span class="green"><b>14</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -6063,7 +5887,62 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(response.status).to eq(200)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(response.body).to include(&quot;86.05&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(response.body).to include(&quot;snash&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="18">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(response.body).to include(&quot;s2an&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="19">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(response.body).to include(&quot;lunch_and_learn_be_7&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
@@ -6074,7 +5953,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="16">
+          <li class="never" data-hits="" data-linenumber="21">
             
             
 
@@ -6085,7 +5964,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="never" data-hits="" data-linenumber="22">
             
             
 

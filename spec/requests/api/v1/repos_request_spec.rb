@@ -12,6 +12,11 @@ RSpec.describe "Api::V1::Repos", type: :request do
       get api_v1_user_repo_path(@user, @repo)
 
       expect(response).to be_successful
+      expect(response.status).to eq(200)
+      expect(response.body).to include("snash")
+      expect(response.body).to include("lunch_and_learn_be_7")
+      expect(response.body).to include("s2an")
+      expect(response.body).to include("86.05")
     end
   end
 end

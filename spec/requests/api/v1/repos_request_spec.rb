@@ -19,7 +19,8 @@ RSpec.describe "Api::V1::Repos", type: :request do
       expect(response.body).to include("86.05")
     end
 
-    xit 'sad path- if a user does not enter file' do
+    # we need error handling in the show action to ensure this
+    xit 'sad path- if a user does not have index.html file' do
 
       repo1 = @user.repos.create!(owner: "s2an", name: "tea_subscription_be_7")
       post api_v1_user_repo_path(@user, repo1), params: repo1

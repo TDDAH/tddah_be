@@ -1,6 +1,9 @@
-class Api::V1::AchievementssController < ApplicationController
+class Api::V1::AchievementsController < ApplicationController
   
-  # def index
+  def index
+    user = User.find(params[:user_id])
+    achievements = user.achievements
+    render json: AchievementSerializer.new(achievements)
+  end
 
-  # end
 end

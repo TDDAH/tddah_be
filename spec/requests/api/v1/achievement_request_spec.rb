@@ -12,7 +12,7 @@ RSpec.describe "Api::V1::Achievements", type: :request do
   describe "User Achievements Index" do
     it 'shows a users achievements' do
       get api_v1_user_achievements_path(@user1)
-
+      
       expect(response).to be_successful
       expect(response.status).to eq(200)
       expect(response.body).to include("SimpleCov Pro")

@@ -1,12 +1,17 @@
 class Api::V1::ReposController < ApplicationController
   # just for a place for repos to be stored
-  def index
-
-  end
+  def index; end
 
   # GET /api/v1/users/:user_id/repos/:id
   def show
-    render json: RepoSerializer.new(RepoFacade.pack_coverage_file_for_FE(params[:user_id], params[:id]))
+    result = RepoFacade.pack_coverage_file_for_FE(params[:user_id], params[:id])
+
+    if result.is_a?(Hash) && result[:error]
+      # need to comment out the status because it is a weird frakenstien of a response
+      render json: { error: result[:error] }#, status: :not_found
+    else
+      render json: RepoSerializer.new(result)
+    end
   end
 
   # POST /api/v1/users/:user_id/repos

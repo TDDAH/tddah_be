@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2024-03-28T14:47:45-06:00">2024-03-28T14:47:45-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2024-03-29T14:47:52-06:00">2024-03-29T14:47:52-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  97.9%
+  97.98%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.18
+         1.19
        </span>
     </span> hits/line
     )
@@ -39,15 +39,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>26</b> files in total.
+    <b>28</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>286</b> relevant lines,
-    <span class="green"><b>280</b> lines covered</span> and
+    <b>297</b> relevant lines,
+    <span class="green"><b>291</b> lines covered</span> and
     <span class="red"><b>6</b> lines missed. </span>
     (<span class="green">
-  97.9%
+  97.98%
 </span>
 )
   </div>
@@ -111,6 +111,17 @@
             <td class="cell--number">20</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.35</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#93f46738bb0c8ebd59d14a32a9406f8d9d21b692" class="src_link" title="app/models/achievement.rb">app/models/achievement.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
             
           </tr>
         
@@ -291,13 +302,24 @@
           </tr>
         
           <tr class="t-file">
+            <td class="strong t-file__name"><a href="#dd94c346e84c77a2eaa717d58a9bb4bd03b36842" class="src_link" title="spec/models/achievement_spec.rb">spec/models/achievement_spec.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">10</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.50</td>
+            
+          </tr>
+        
+          <tr class="t-file">
             <td class="strong t-file__name"><a href="#3d72e0789bdba81de733934b5b3a5b39c480bac0" class="src_link" title="spec/models/repo_spec.rb">spec/models/repo_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">8</td>
+            <td class="cell--number">15</td>
+            <td class="cell--number">9</td>
+            <td class="cell--number">9</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.25</td>
+            <td class="cell--number">1.33</td>
             
           </tr>
         
@@ -1693,6 +1715,103 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="40">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="93f46738bb0c8ebd59d14a32a9406f8d9d21b692">
+  <div class="header">
+    <h3>app/models/achievement.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>4</b> relevant lines.
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">class Achievement &lt; ApplicationRecord</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  belongs_to :user</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  validates :name, presence: :true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  validates :criteria, presence: :true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
             
             
 
@@ -4744,6 +4863,147 @@
 </div>
 
       
+        <div class="source_table" id="dd94c346e84c77a2eaa717d58a9bb4bd03b36842">
+  <div class="header">
+    <h3>spec/models/achievement_spec.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>6</b> relevant lines.
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &quot;rails_helper&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">RSpec.describe Achievement, type: :model do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  describe &quot;validations&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="5">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    it { should validate_presence_of(:name) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="6">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    it { should validate_presence_of(:criteria) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="7">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    it { should belong_to(:user) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="3d72e0789bdba81de733934b5b3a5b39c480bac0">
   <div class="header">
     <h3>spec/models/repo_spec.rb</h3>
@@ -4758,8 +5018,8 @@
     
 
     <div class="t-line-summary">
-      <b>8</b> relevant lines.
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>9</b> relevant lines.
+      <span class="green"><b>9</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -4837,13 +5097,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="7">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    it { should belong_to(:user) }</code>
           </li>
         </div>
       
@@ -4854,18 +5114,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="9">
+            
             
 
             
 
-            <code class="ruby">  it &quot;exists&quot; do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4876,7 +5136,7 @@
 
             
 
-            <code class="ruby">    repo = Repo.new</code>
+            <code class="ruby">  it &quot;exists&quot; do</code>
           </li>
         </div>
       
@@ -4887,18 +5147,18 @@
 
             
 
-            <code class="ruby">    expect(repo).to be_an_instance_of(Repo)</code>
+            <code class="ruby">    repo = Repo.new</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    expect(repo).to be_an_instance_of(Repo)</code>
           </li>
         </div>
       
@@ -4909,12 +5169,23 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
             
             
 
@@ -6217,35 +6488,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">    # we need error handling in the show action to ensure this</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    xit &#39;sad path- if a user does not enter file&#39; do</code>
+            <code class="ruby">    xit &#39;sad path- if a user does not have index.html file&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="never" data-hits="" data-linenumber="24">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="24">
-            
-            
-
-            
-
-            <code class="ruby">      repo1 = @user.repos.create!(owner: &quot;s2an&quot;, name: &quot;tea_subscription_be_7&quot;)</code>
           </li>
         </div>
       
@@ -6256,18 +6527,18 @@
 
             
 
-            <code class="ruby">      post api_v1_user_repo_path(@user, repo1), params: repo1</code>
+            <code class="ruby">      repo1 = @user.repos.create!(owner: &quot;s2an&quot;, name: &quot;tea_subscription_be_7&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="26">
+          <li class="missed" data-hits="0" data-linenumber="26">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      post api_v1_user_repo_path(@user, repo1), params: repo1</code>
           </li>
         </div>
       
@@ -6283,7 +6554,18 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="28">
+          <li class="never" data-hits="" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="29">
             
             
 
@@ -6294,24 +6576,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="29">
+          <li class="never" data-hits="" data-linenumber="30">
             
             
 
             
 
             <code class="ruby">      </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="30">
-            
-            
-
-            
-
-            <code class="ruby">      expect(response).to eq(404)</code>
           </li>
         </div>
       
@@ -6322,18 +6593,18 @@
 
             
 
-            <code class="ruby">      expect(response.message).to eq(&quot;Not Found&quot;)</code>
+            <code class="ruby">      expect(response).to eq(404)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="32">
+          <li class="missed" data-hits="0" data-linenumber="32">
             
             
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">      expect(response.message).to eq(&quot;Not Found&quot;)</code>
           </li>
         </div>
       
@@ -6344,7 +6615,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -6355,18 +6626,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="35">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="35">
+            
             
 
             
 
-            <code class="ruby">  describe &quot;Repos Create&quot; do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -6377,12 +6648,23 @@
 
             
 
+            <code class="ruby">  describe &quot;Repos Create&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="37">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">    it &quot;creates a repo&quot; do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="37">
+          <li class="never" data-hits="" data-linenumber="38">
             
             
 
@@ -6393,24 +6675,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="38">
+          <li class="covered" data-hits="1" data-linenumber="39">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">        user: @user.id,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="39">
-            
-            
-
-            
-
-            <code class="ruby">        owner: &quot;delaneymiranda1&quot;,</code>
           </li>
         </div>
       
@@ -6421,7 +6692,7 @@
 
             
 
-            <code class="ruby">        name: &quot;be_cheap_date&quot;</code>
+            <code class="ruby">        owner: &quot;delaneymiranda1&quot;,</code>
           </li>
         </div>
       
@@ -6432,7 +6703,7 @@
 
             
 
-            <code class="ruby">      }</code>
+            <code class="ruby">        name: &quot;be_cheap_date&quot;</code>
           </li>
         </div>
       
@@ -6443,12 +6714,23 @@
 
             
 
+            <code class="ruby">      }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="43">
+          <li class="covered" data-hits="1" data-linenumber="44">
             <span class="hits">1</span>
             
 
@@ -6459,7 +6741,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="44">
+          <li class="never" data-hits="" data-linenumber="45">
             
             
 
@@ -6470,7 +6752,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="45">
+          <li class="covered" data-hits="1" data-linenumber="46">
             <span class="hits">1</span>
             
 
@@ -6481,7 +6763,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="46">
+          <li class="never" data-hits="" data-linenumber="47">
             
             
 
@@ -6492,7 +6774,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="47">
+          <li class="covered" data-hits="1" data-linenumber="48">
             <span class="hits">1</span>
             
 
@@ -6503,7 +6785,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="48">
+          <li class="never" data-hits="" data-linenumber="49">
             
             
 
@@ -6514,7 +6796,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="49">
+          <li class="covered" data-hits="1" data-linenumber="50">
             <span class="hits">1</span>
             
 
@@ -6525,24 +6807,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="50">
+          <li class="never" data-hits="" data-linenumber="51">
             
             
 
             
 
             <code class="ruby">      </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="51">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(new_repo.owner).to eq(&quot;delaneymiranda1&quot;)</code>
           </li>
         </div>
       
@@ -6553,18 +6824,18 @@
 
             
 
-            <code class="ruby">      expect(new_repo.name).to eq(&quot;be_cheap_date&quot;)</code>
+            <code class="ruby">      expect(new_repo.owner).to eq(&quot;delaneymiranda1&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="53">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="53">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">      expect(new_repo.name).to eq(&quot;be_cheap_date&quot;)</code>
           </li>
         </div>
       
@@ -6575,12 +6846,23 @@
 
             
 
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="55">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="55">
+          <li class="covered" data-hits="1" data-linenumber="56">
             <span class="hits">1</span>
             
 
@@ -6591,7 +6873,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="56">
+          <li class="never" data-hits="" data-linenumber="57">
             
             
 
@@ -6602,7 +6884,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="57">
+          <li class="covered" data-hits="1" data-linenumber="58">
             <span class="hits">1</span>
             
 
@@ -6613,7 +6895,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="58">
+          <li class="never" data-hits="" data-linenumber="59">
             
             
 
@@ -6624,7 +6906,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="59">
+          <li class="never" data-hits="" data-linenumber="60">
             
             
 
@@ -6635,7 +6917,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="60">
+          <li class="never" data-hits="" data-linenumber="61">
             
             
 
@@ -6646,7 +6928,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="61">
+          <li class="never" data-hits="" data-linenumber="62">
             
             
 
@@ -6657,7 +6939,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="62">
+          <li class="covered" data-hits="1" data-linenumber="63">
             <span class="hits">1</span>
             
 
@@ -6668,7 +6950,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="63">
+          <li class="never" data-hits="" data-linenumber="64">
             
             
 
@@ -6679,7 +6961,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="64">
+          <li class="covered" data-hits="1" data-linenumber="65">
             <span class="hits">1</span>
             
 
@@ -6690,7 +6972,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="65">
+          <li class="never" data-hits="" data-linenumber="66">
             
             
 
@@ -6701,7 +6983,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="66">
+          <li class="covered" data-hits="1" data-linenumber="67">
             <span class="hits">1</span>
             
 
@@ -6712,24 +6994,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="67">
+          <li class="covered" data-hits="1" data-linenumber="68">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">      expect(response).to have_http_status(401)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="68">
-            
-            
-
-            
-
-            <code class="ruby">      </code>
           </li>
         </div>
       

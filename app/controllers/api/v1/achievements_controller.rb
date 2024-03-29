@@ -6,4 +6,7 @@ class Api::V1::AchievementsController < ApplicationController
     render json: AchievementSerializer.new(achievements)
   end
 
+  # def create
+
+  # end
 end

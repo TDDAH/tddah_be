@@ -4,12 +4,16 @@ class GithubService
   end
 
   def get_uri(path)
-    # require "pry"; binding.pry
-    response = conn.get(path)
-    # this is where it should have the error handling...and I'm over-complicating it :(
-    # if response.status == 404
+    response = conn.get(path) 
 
-    JSON.parse(response.body, symbolize_names: true)
+    case response.status
+    when 200
+      JSON.parse(response.body, symbolize_names: true)
+    when 404
+      { error: "Coverage file not found in repo", status: 404 }
+    else
+      { error: "An unexpected error occurred", status: response.status }
+    end
   end
 
   def conn #5

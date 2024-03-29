@@ -23,6 +23,7 @@ class RepoFacade
   end
 
   def self.decode_coverage(response)
+    # return nil unless response && response[:content]
     decoded_content = Base64.decode64(response[:content])
     decoded_content
   end

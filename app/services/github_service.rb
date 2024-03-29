@@ -4,8 +4,12 @@ class GithubService
   end
 
   def get_uri(path)
-    response = conn.get(path) 
-    JSON.parse(response.body, symbolize_names: true)
+    response = conn.get(path)
+    if response.status == 200
+      JSON.parse(response.body, symbolize_names: true)
+    else
+      { error: "Not Found" }
+    end
   end
 
   def conn #5

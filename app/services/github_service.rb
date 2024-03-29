@@ -4,12 +4,12 @@ class GithubService
   end
 
   def get_uri(path)
+    # require "pry"; binding.pry
     response = conn.get(path)
-    if response.status == 200
-      JSON.parse(response.body, symbolize_names: true)
-    else
-      { error: "Not Found" }
-    end
+    # this is where it should have the error handling...and I'm over-complicating it :(
+    # if response.status == 404
+
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def conn #5

@@ -1,6 +1,6 @@
 class Achievement < ApplicationRecord
-  belongs_to :user
-
-  validates :name, presence: :true
   validates :criteria, presence: :true
+  validates :name, presence: :true
+  has_many :repo_achievements
+  has_many :repos, through: :repo_achievements
 end

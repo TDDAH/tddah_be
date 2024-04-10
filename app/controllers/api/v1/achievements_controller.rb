@@ -1,16 +1,14 @@
 class Api::V1::AchievementsController < ApplicationController
   
-  # GET /api/v1/users/:user_id/achievements
+  # GET /api/v1/achievements
   def index
-    user = User.find(params[:user_id])
-    achievements = user.achievements
+    achievements = Achievement.all
     render json: AchievementSerializer.new(achievements)
   end
 
-  # POST /api/v1/users/:user_id/achievements
+  # POST /api/v1/achievements
   def create
-    user = User.find(params[:user_id])
-    achievement = user.achievements.new(achievement_params)
+    achievement = Achievement.new(achievement_params)
 
     if achievement.save
       render json: achievement, status: :created
@@ -18,7 +16,6 @@ class Api::V1::AchievementsController < ApplicationController
       render json: achievement.errors, status: :unauthorized
     end
   end
-
 
   private
 

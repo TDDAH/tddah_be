@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   has_many :repos
-  has_many :achievements
 
   validates :name, presence: :true
   validates :email, presence: :true

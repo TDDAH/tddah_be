@@ -5,7 +5,15 @@ class GithubService
 
   def get_uri(path)
     response = conn.get(path) 
-    JSON.parse(response.body, symbolize_names: true)
+
+    case response.status
+    when 200
+      JSON.parse(response.body, symbolize_names: true)
+    when 404
+      { error: "Coverage file not found in repo", status: 404 }
+    else
+      { error: "An unexpected error occurred", status: response.status }
+    end
   end
 
   def conn #5

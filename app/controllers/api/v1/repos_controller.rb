@@ -26,7 +26,12 @@ class Api::V1::ReposController < ApplicationController
     end
   end
 
-
+  # DELETE /api/v1/users/:user_id/repos/:id
+  def destroy
+    user = User.find(params[:user_id])
+    repo = user.repos.find(params[:id])
+    repo.destroy!
+  end
 
   private
 

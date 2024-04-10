@@ -1,6 +1,10 @@
 class Api::V1::ReposController < ApplicationController
-  # just for a place for repos to be stored
-  def index; end
+  # GET /api/v1/users/:user_id/repos
+  def index
+    # user = User.find(params[:user_id])
+    # repos = user.repos.all
+    # render json: RepoSerializer.new(repos)
+  end
 
   # GET /api/v1/users/:user_id/repos/:id
   def show

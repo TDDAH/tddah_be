@@ -10,9 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_22_205141) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_10_193717) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achievements", force: :cascade do |t|
+    t.string "name"
+    t.string "criteria"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "repo_achievements", force: :cascade do |t|
+    t.bigint "repo_id", null: false
+    t.bigint "achievement_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["achievement_id"], name: "index_repo_achievements_on_achievement_id"
+    t.index ["repo_id"], name: "index_repo_achievements_on_repo_id"
+  end
 
   create_table "repos", force: :cascade do |t|
     t.string "owner"
@@ -32,5 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_22_205141) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "repo_achievements", "achievements"
+  add_foreign_key "repo_achievements", "repos"
   add_foreign_key "repos", "users"
 end

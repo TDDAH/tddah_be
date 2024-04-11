@@ -116,8 +116,20 @@ _Not yet working on Postman_
 ## Achievements
 
 `GET /api/v1/achievements`
-
-_Not yet working on Postman_
+```
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "achievement",
+            "attributes": {
+                "name": "SimpleCov Pro",
+                "criteria": "SimpleCov coverage achieves over 95%"
+            }
+        }
+    ]
+}
+```
 
 ### Create Achievement
 

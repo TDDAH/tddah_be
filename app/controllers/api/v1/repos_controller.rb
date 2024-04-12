@@ -1,6 +1,21 @@
 class Api::V1::ReposController < ApplicationController
-  # just for a place for repos to be stored
-  def index; end
+  # GET /api/v1/users/:user_id/repos
+  def index
+    user = User.find(params[:user_id])
+    repos = user.repos
+
+    serialized_repos = repos.map do |repo|
+      
+      result = RepoFacade.pack_coverage_file_for_FE(params[:user_id], repo.id)
+
+      if result.is_a?(Hash) && result[:error]
+        { id: repo.id, error: result[:error] }
+      else
+        RepoSerializer.new(result)
+      end
+    end
+    render json: serialized_repos
+  end
 
   # GET /api/v1/users/:user_id/repos/:id
   def show
@@ -26,7 +41,12 @@ class Api::V1::ReposController < ApplicationController
     end
   end
 
-
+  # DELETE /api/v1/users/:user_id/repos/:id
+  def destroy
+    user = User.find(params[:user_id])
+    repo = user.repos.find(params[:id])
+    repo.destroy!
+  end
 
   private
 

@@ -6,7 +6,7 @@ class RepoFacade
     user = User.find(user_id)
     repo = user.repos.find(repo_id)
     file_content = get_coverage_file(repo.owner, repo.name)
-
+    
     if file_content.nil?
       { error: "Coverage file not found." }
     else

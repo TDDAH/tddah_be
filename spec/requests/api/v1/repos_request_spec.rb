@@ -11,17 +11,15 @@ RSpec.describe "Api::V1::Repos", type: :request do
   describe "Repos Index" do
     it "displays all the users repos" do
       get api_v1_user_repos_path(@user)
-      
       expect(response).to be_successful
       expect(response.status).to eq(200)
-      # require 'pry'; binding.pry
       expect(response.body).to include("snash")
       expect(response.body).to include("lunch_and_learn_be_7")
       expect(response.body).to include("s2an")
       expect(response.body).to include("86.05")
       expect(response.body).to include("delaneymiranda1")
       expect(response.body).to include("lunch_and_learn")
-      # expect(response.body).to include("86.05")
+      expect(response.body).to include("98.21")
 
     end
   end
@@ -29,7 +27,6 @@ RSpec.describe "Api::V1::Repos", type: :request do
   describe "Repos Show" do
     it "displays the repo's SimpleCov percentage" do
       get api_v1_user_repo_path(@user, @repo)
-    #  require "pry"; binding.pry 
       expect(response).to be_successful
       expect(response.status).to eq(200)
       expect(response.body).to include("snash")

@@ -4,25 +4,23 @@ RSpec.describe "Api::V1::Repos", type: :request do
 
   before(:each) do
     @user = User.create!(name: "snash", email: "turing@example.com", password: "ott123", password_confirmation: "ott123")  
+    @repo = @user.repos.create!(owner: "s2an", name: "lunch_and_learn_be_7")
+    @repo2 = @user.repos.create!(owner: "delaneymiranda1", name: "lunch_and_learn")
   end
 
   describe "Repos Index" do
-    xit "displays all the users repos" do
-    #   @repo = @user.repos.create!(owner: "s2an", name: "lunch_and_learn_be_7")
-    #   get api_v1_user_repo_path(@user, @repo)
-    # #  require "pry"; binding.pry 
-    #   expect(response).to be_successful
-    #   expect(response.status).to eq(200)
-    #   expect(response.body).to include("snash")
-    #   expect(response.body).to include("lunch_and_learn_be_7")
-    #   expect(response.body).to include("s2an")
-    #   expect(response.body).to include("86.05")
+    it "displays all the users repos" do
+      get api_v1_user_repos_path(@user)
+      
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+      # require 'pry'; binding.pry
+
     end
   end
   
   describe "Repos Show" do
     it "displays the repo's SimpleCov percentage" do
-      @repo = @user.repos.create!(owner: "s2an", name: "lunch_and_learn_be_7")
       get api_v1_user_repo_path(@user, @repo)
     #  require "pry"; binding.pry 
       expect(response).to be_successful
@@ -85,7 +83,6 @@ RSpec.describe "Api::V1::Repos", type: :request do
 
   describe "Repos destroy" do
     it 'deletes a users repo' do
-      @repo = @user.repos.create!(owner: "s2an", name: "lunch_and_learn_be_7")
       expect(Repo.count).to eq(1)
 
       delete api_v1_user_repo_path(@user, @repo)

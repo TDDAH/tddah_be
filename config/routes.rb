@@ -10,8 +10,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :achievements, only: [:index, :create]
       resources :users, only: [:index, :show, :create, :destroy] do
-        resources :repos, only: [:index, :show, :create, :destroy]
+        resources :repos, only: [:index, :show, :create, :destroy] do
+          resources :repo_achievements, only: [:index]
+        end
       end        
     end
   end

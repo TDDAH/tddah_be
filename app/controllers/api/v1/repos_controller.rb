@@ -1,9 +1,18 @@
 class Api::V1::ReposController < ApplicationController
   # GET /api/v1/users/:user_id/repos
   def index
-    # user = User.find(params[:user_id])
-    # repos = user.repos.all
-    # render json: RepoSerializer.new(repos)
+    user = User.find(params[:user_id])
+    repos = user.repos
+
+    serialized_repos = repos.each do |repo|
+      result = RepoFacade.pack_coverage_file_for_FE(user.id, repo.id)
+
+      if result.is_a?(Hash) && result[:error]
+        { id: repo.id, error: result[:error] }
+      else
+        render json: RepoSerializer.new(result)
+      end
+    end
   end
 
   # GET /api/v1/users/:user_id/repos/:id

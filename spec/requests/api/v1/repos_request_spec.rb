@@ -15,6 +15,13 @@ RSpec.describe "Api::V1::Repos", type: :request do
       expect(response).to be_successful
       expect(response.status).to eq(200)
       # require 'pry'; binding.pry
+      expect(response.body).to include("snash")
+      expect(response.body).to include("lunch_and_learn_be_7")
+      expect(response.body).to include("s2an")
+      expect(response.body).to include("86.05")
+      expect(response.body).to include("delaneymiranda1")
+      expect(response.body).to include("lunch_and_learn")
+      # expect(response.body).to include("86.05")
 
     end
   end
@@ -83,12 +90,12 @@ RSpec.describe "Api::V1::Repos", type: :request do
 
   describe "Repos destroy" do
     it 'deletes a users repo' do
-      expect(Repo.count).to eq(1)
+      expect(Repo.count).to eq(2)
 
       delete api_v1_user_repo_path(@user, @repo)
 
       expect(response).to be_successful
-      expect(Repo.count).to eq(0)
+      expect(Repo.count).to eq(1)
       expect{Repo.find(@repo.id)}.to raise_error(ActiveRecord::RecordNotFound)
     end
   end

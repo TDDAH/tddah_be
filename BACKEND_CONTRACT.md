@@ -56,16 +56,16 @@ __JSON Return__
             "id": "1",
             "type": "user",
             "attributes": {
-                "name": "Joe",
-                "email": "test@test.com"
+                "name": "string",
+                "email": "example@example.com"
             }
         },
         {
             "id": "2",
             "type": "user",
             "attributes": {
-                "name": "Jane",
-                "email": "jane@test.com"
+                "name": "string",
+                "email": "example2@example.com"
             }
         }
     ]
@@ -98,10 +98,10 @@ __JSON Return__
         "type": "repo",
         "attributes": {
             "id": 3,
-            "user": "Joe",
-            "owner": "s2an",
-            "name": "lunch_and_learn_be_7",
-            "covered_percent": "86.05%"
+            "user": "string",
+            "owner": "github owner's name",
+            "name": "repo's name",
+            "covered_percent": "calculated upon creating repo"
         }
     }
 }
@@ -111,29 +111,13 @@ __JSON Return__
 
 `GET /api/v1/users/:user_id/repos/`
 
-_Not yet working on Postman_
+_Not working on Postman_
 
 ## Achievements
 
-`GET /api/v1/achievements`
-```
-{
-    "data": [
-        {
-            "id": "1",
-            "type": "achievement",
-            "attributes": {
-                "name": "SimpleCov Pro",
-                "criteria": "SimpleCov coverage achieves over 95%"
-            }
-        }
-    ]
-}
-```
-
 ### Create Achievement
 
-__BACKEND ONLY__
+_Creating acheivements is not currently supported by the frontend_
 
 `POST /api/v1/achievements`
 
@@ -145,3 +129,30 @@ __JSON Payload__
 }
 ```
 
+### Index Achievements
+
+`GET /api/v1/achievements`
+
+__JSON Return__
+
+```
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "achievement",
+            "attributes": {
+                "name": "SimpleCov Pro",
+                "criteria": "SimpleCov coverage achieves over 95%"
+            }
+        },
+        {
+            "id": "2",
+            "type": "achievement",
+            "attributes": {
+                "name": "SimpleCov Wizard",
+                "criteria": "SimpleCov coverage achieves 100%"
+            }
+        }
+    ]
+}

@@ -119,6 +119,8 @@ RSpec.describe "Api::V1::Repos", type: :request do
       expect(Repo.count).to eq(2)
       expect(response).to_not be_successful
       expect(response.body).to include("Repo not found.")
+      # working response
+      # expect(response.body).to include("{\"errors\":[{\"status\":404,\"title\":\"Couldn't find Repo with 'id'=335 [WHERE \\\"repos\\\".\\\"user_id\\\" = $1]\"}]}")
     end
   end
 end

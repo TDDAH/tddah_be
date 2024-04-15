@@ -111,7 +111,32 @@ __JSON Return__
 
 `GET /api/v1/users/:user_id/repos/`
 
-_Not working on Postman_
+__JSON Return__
+```
+[
+    {
+        "id": 1,
+        "error": "Coverage file not found."
+    },
+    {
+        "id": 2,
+        "error": "Coverage file not found."
+    },
+    {
+        "data": {
+            "id": "3",
+            "type": "repo",
+            "attributes": {
+                "id": 3,
+                "user": "string",
+                "owner": "repo owner",
+                "name": "repo name",
+                "covered_percent": "86.05%"
+            }
+        }
+    }
+]
+```
 
 ## Achievements
 

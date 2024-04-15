@@ -33,5 +33,5 @@
 /config/master.key
 
 # Ignore SimpleCov coverage reports, but allow the index.html file.
-/coverage/*
+/coverage/
 !coverage/index.html

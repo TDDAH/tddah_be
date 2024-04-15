@@ -20,7 +20,6 @@ RSpec.describe "Api::V1::Repos", type: :request do
       expect(response.body).to include("delaneymiranda1")
       expect(response.body).to include("lunch_and_learn")
       expect(response.body).to include("98.21")
-
     end
   end
   
@@ -35,13 +34,11 @@ RSpec.describe "Api::V1::Repos", type: :request do
       expect(response.body).to include("86.05")
     end
     
-    # we need error handling in the show action to ensure this
     it 'sad path- if a repo does not have index.html file' do
       repo_no_file = @user.repos.create!(owner: "s2an", name: "tea_subscription_be_7")
 
       get api_v1_user_repo_path(@user, repo_no_file)
 
-      # the response is successful here, because it is a weird frakenstien of a response...
       expect(response).to be_successful
       expect(response.status).to eq(200)
 
@@ -82,6 +79,22 @@ RSpec.describe "Api::V1::Repos", type: :request do
 
       expect(response).to_not be_successful
       expect(response).to have_http_status(401)
+    end
+
+    it 'sad path- repo already exists' do
+      repo_params = {
+        user: @user.id,
+        owner: "s2an",
+        name: "lunch_and_learn_be_7"
+      }
+
+      post api_v1_user_repos_path(@user, repo_params), params: repo_params
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(401)
+      expect(response.body).to include("Repo already exists.")
     end
   end
 

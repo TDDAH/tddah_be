@@ -32,12 +32,17 @@ class Api::V1::ReposController < ApplicationController
   # POST /api/v1/users/:user_id/repos
   def create
     user = User.find(params[:user_id])
-    repo = user.repos.new(repo_params)
 
-    if repo.save
-      render json: repo, status: :created
+    if user.repos.exists?(owner: repo_params[:owner], name: repo_params[:name])
+      render json: { error: "Repo already exists." }, status: :unauthorized
     else
-      render json: repo.errors, status: :unauthorized
+      repo = user.repos.new(repo_params)
+
+      if repo.save
+        render json: repo, status: :created
+      else
+        render json: repo.errors, status: :unauthorized
+      end
     end
   end
 

@@ -65,33 +65,7 @@ While not necessary for the average user, the backend can be interacted in the f
 
 ## Endpoints
 
-### User
-
-`GET /api/v1/users`
-`GET /api/v1/user/:id`
-`POST api/v1/users`
-
-__JSON__
-```
-{
-    "name": "string",
-    "email": "example@example",
-    "password": "string123",
-    "password_confirmation": "string123"
-}
-```
-### Repo
-
-`GET /api/v1/users/:user_id/repos/:id`
-`POST /api/v1/users/:user_id/repos`
-
-__JSON__
-```
-{
-    "owner": "string",
-    "name": "string"
-}
-```
+See ./BACKEND_CONTRACT.md
 
 ## Database Schema
 

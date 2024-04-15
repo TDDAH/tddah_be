@@ -157,7 +157,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
       post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
       expect(response).to have_http_status(:created)
       
-      post api_v1_users_path, headers: headers˝, params: JSON.generate(user: user_params)
+      post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
       
       expect(response).to have_http_status(:unprocessable_entity)
       expect(response.body).to include("{\"email\":[\"has already been taken\"]}")

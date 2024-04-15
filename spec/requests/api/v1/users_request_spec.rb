@@ -76,25 +76,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
       expect(new_user.name).to eq(user_params[:name])
       expect(new_user.email).to eq(user_params[:email])
       expect(new_user.password).to eq(user_params[:password])
-      expect(new_user.password_confirmation).to eq(user_params[:password_confirmation])
-    end
-
-    it 'sad path- error if user is not created' do
-      user_params = { 
-        name: "",
-        email: "barclay@example.com",
-        password: "bass123",
-        password_confirmation: "bass123"
-      }
-
-      headers = {"CONTENT_TYPE" => "application/json"}
-
-      post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
-
-      new_user = User.last
-
-      expect(response).to_not be_successful
-      expect(response).to have_http_status(401)
+      # expect(new_user.password_confirmation).to eq(user_params[:password_confirmation]) <--this is now nil after adding `confirmation: :true` to the user model
     end
   end
 
@@ -109,6 +91,76 @@ RSpec.describe 'Api::V1::Users', type: :request do
       expect(response).to be_successful
       expect(User.count).to eq(0)
       expect{User.find(user.id)}.to raise_error(ActiveRecord::RecordNotFound)
+    end
+  end
+
+  describe "SAD PATHS" do
+    it "user doesn't have a name" do
+      user_params = { 
+        name: "",
+        email: "barclay@example.com",
+        password: "bass123",
+        password_confirmation: "bass123"
+      }
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response.body).to include("{\"name\":[\"can't be blank\"]}")
+      # expect(response.body).to include("{\"password\":[\"passwords don't match\"]}")
+    end
+
+    it "user doesn't have an email" do
+      user_params = { 
+        name: "Barclay",
+        email: "",
+        password: "bass123",
+        password_confirmation: "bass123"
+      }
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response.body).to include("{\"email\":[\"can't be blank\"]}")
+    end
+
+    it "user doesn't have matching passwords" do
+      user_params = { 
+        name: "Barclay",
+        email: "barclay@example.com",
+        password: "bass123",
+        password_confirmation: "bass"
+      }
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
+
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response.body).to include("{\"password_confirmation\":[\"doesn't match Password\"]}")
+    end
+    
+    it "user already exists" do
+      user_params = { 
+        name: "Barclay",
+        email: "barclay@example.com",
+        password: "bass123",
+        password_confirmation: "bass123"
+      }
+      
+      headers = {"CONTENT_TYPE" => "application/json"}
+      
+      post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
+      expect(response).to have_http_status(:created)
+      
+      post api_v1_users_path, headers: headers˝, params: JSON.generate(user: user_params)
+      
+      expect(response).to have_http_status(:unprocessable_entity)
+      expect(response.body).to include("{\"email\":[\"has already been taken\"]}")
     end
   end
 end

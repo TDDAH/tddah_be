@@ -109,7 +109,6 @@ RSpec.describe 'Api::V1::Users', type: :request do
 
       expect(response).to have_http_status(:unprocessable_entity)
       expect(response.body).to include("{\"name\":[\"can't be blank\"]}")
-      # expect(response.body).to include("{\"password\":[\"passwords don't match\"]}")
     end
 
     it "user doesn't have an email" do
@@ -161,6 +160,22 @@ RSpec.describe 'Api::V1::Users', type: :request do
       
       expect(response).to have_http_status(:unprocessable_entity)
       expect(response.body).to include("{\"email\":[\"has already been taken\"]}")
+    end
+    
+    it "tries to visit a user that doesn't exist" do
+      
+      get api_v1_user_path(id: 9999)
+      
+      expect(response).to have_http_status(:not_found)
+      expect(response.body).to include("{\"errors\":[{\"status\":404,\"title\":\"Couldn't find User with 'id'=9999\"}]}")
+    end
+    
+    it "tries to visit a user that doesn't exist" do
+      
+      delete api_v1_user_path(id: 9999)
+      
+      expect(response).to have_http_status(:not_found)
+      expect(response.body).to include("{\"errors\":[{\"status\":404,\"title\":\"Couldn't find User with 'id'=9999\"}]}")
     end
   end
 end

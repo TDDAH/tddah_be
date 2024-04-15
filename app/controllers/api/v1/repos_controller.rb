@@ -50,7 +50,12 @@ class Api::V1::ReposController < ApplicationController
   def destroy
     user = User.find(params[:user_id])
     repo = user.repos.find(params[:id])
-    repo.destroy!
+    
+    if repo.nil?
+      render json: { error: "Repo not found." }, status: :not_found
+    else
+      repo.destroy!
+    end
   end
 
   private

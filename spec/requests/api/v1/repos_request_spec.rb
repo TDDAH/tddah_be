@@ -108,5 +108,17 @@ RSpec.describe "Api::V1::Repos", type: :request do
       expect(Repo.count).to eq(1)
       expect{Repo.find(@repo.id)}.to raise_error(ActiveRecord::RecordNotFound)
     end
+
+    it 'sad path- repo not found' do
+      expect(Repo.count).to eq(2)
+
+      non_existing_repo_id = @repo2.id + 1
+
+      delete api_v1_user_repo_path(@user, non_existing_repo_id)
+
+      expect(Repo.count).to eq(2)
+      expect(response).to_not be_successful
+      expect(response.body).to include("Repo not found.")
+    end
   end
 end

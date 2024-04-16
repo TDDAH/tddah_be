@@ -76,7 +76,6 @@ RSpec.describe 'Api::V1::Users', type: :request do
       expect(new_user.name).to eq(user_params[:name])
       expect(new_user.email).to eq(user_params[:email])
       expect(new_user.password).to eq(user_params[:password])
-      # expect(new_user.password_confirmation).to eq(user_params[:password_confirmation]) <--this is now nil after adding `confirmation: :true` to the user model
     end
   end
 
@@ -100,9 +99,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
       expect(new_user.uid).to eq("123456")
       expect(new_user.name).to eq("Barclay Crenshaw")
       expect(new_user.email).to eq("barclay@example.com")
-      require "pry"; binding.pry
       expect(new_user.password).not_to be_nil
-      expect(new_user.password).to eq(new_user.password_confirmation)
     end
   end
 

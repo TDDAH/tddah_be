@@ -8,12 +8,18 @@ class Api::V1::AchievementsController < ApplicationController
 
   # POST /api/v1/achievements
   def create
-    achievement = Achievement.new(achievement_params)
+    existing_achievement = Achievement.find_by(name: achievement_params[:name], criteria: achievement_params[:criteria])
 
-    if achievement.save
-      render json: achievement, status: :created
+    if existing_achievement
+      render json: { error: "This achievement is already in the system." }, status: :unauthorized
     else
-      render json: achievement.errors, status: :unauthorized
+      achievement = Achievement.new(achievement_params)
+
+      if achievement.save
+        render json: achievement, status: :created
+      else
+        render json: achievement.errors, status: :unauthorized
+      end
     end
   end
 

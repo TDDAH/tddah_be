@@ -50,5 +50,20 @@ RSpec.describe "Api::V1::Achievements", type: :request do
       expect(response).to_not be_successful
       expect(response).to have_http_status(401)
     end
+
+    it 'sad path- achievement already in the system' do
+      achievement_params = {
+        name: "SimpleCov Pro",
+        criteria: "SimpleCov coverage achieves over 95%"
+      }
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      post api_v1_achievements_path(achievement_params), params: achievement_params
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(401)
+      expect(response.body).to include("This achievement is already in the system.")
+    end
   end
 end

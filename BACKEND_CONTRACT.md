@@ -270,6 +270,24 @@ __JSON Payload__
     "criteria": "string"
 }
 ```
+__SAD PATHS__
+
+- Missing Param: Name
+```
+{
+    "name": [
+        "can't be blank"
+    ]
+}
+```
+- Missing Param: Criteria
+```
+{
+    "criteria": [
+        "can't be blank"
+    ]
+}
+```
 
 ### Index Achievements
 

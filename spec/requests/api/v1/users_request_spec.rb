@@ -76,7 +76,30 @@ RSpec.describe 'Api::V1::Users', type: :request do
       expect(new_user.name).to eq(user_params[:name])
       expect(new_user.email).to eq(user_params[:email])
       expect(new_user.password).to eq(user_params[:password])
-      # expect(new_user.password_confirmation).to eq(user_params[:password_confirmation]) <--this is now nil after adding `confirmation: :true` to the user model
+    end
+  end
+
+  describe "OAuth Create" do
+    it "creates a user through GitHub" do
+      oauth_user_params = { 
+        name: "Barclay Crenshaw",
+        email: "barclay@example.com",
+        provider: "github",
+        uid: "123456"
+      }
+
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      post api_v1_users_path, headers: headers, params: JSON.generate(user: oauth_user_params)
+
+      new_user = User.last
+
+      expect(response).to be_successful
+      expect(new_user.provider).to eq("github")
+      expect(new_user.uid).to eq("123456")
+      expect(new_user.name).to eq("Barclay Crenshaw")
+      expect(new_user.email).to eq("barclay@example.com")
+      expect(new_user.password).not_to be_nil
     end
   end
 

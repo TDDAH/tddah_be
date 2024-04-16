@@ -14,7 +14,19 @@ class Api::V1::UsersController < ApplicationController
 
   # POST /api/v1/users
   def create
-    user = User.new(user_params)
+    # If created through GitHub Oath
+    if params[:user][:provider] && params[:user][:uid]
+      user = User.find_or_initialize_by(provider: params[:user][:provider], uid: params[:user][:uid])
+      user.assign_attributes(oauth_user_params)
+      if user.new_record?
+        random_password = SecureRandom.hex(10)
+        user.password = random_password
+        user.password_confirmation = random_password
+      end
+    else
+      # If created through Sign Up
+      user = User.new(user_params)
+    end
 
     if user.save
       render json: user, status: :created
@@ -33,5 +45,9 @@ class Api::V1::UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def oauth_user_params
+    params.require(:user).permit(:name, :email, :provider, :uid)
   end
 end

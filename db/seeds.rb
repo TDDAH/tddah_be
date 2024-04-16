@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Achievement.find_or_create_by(name: "SimpleCov Novice") do |achievement|
+  achievement.criteria = "SimpleCov coverage achieves over 80%"
+end
+Achievement.find_or_create_by(name: "SimpleCov Pro") do |achievement|
+  achievement.criteria = "SimpleCov coverage achieves over 90%"
+end
+Achievement.find_or_create_by(name: "SimpleCov Wizard") do |achievement|
+  achievement.criteria = "SimpleCov coverage achieves 100%"
+end
+

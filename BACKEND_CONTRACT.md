@@ -13,6 +13,7 @@ __Request__
 `POST api/v1/users`
 
 __JSON Payload__
+
 ```
 {
     "name": "string",
@@ -64,6 +65,7 @@ __Request__
 `DELETE api/v1/users/:id`
 
 __SAD PATH__
+
 ```
 {
     "errors": [
@@ -81,7 +83,8 @@ __Request__
 
 `GET /api/v1/user/:id`
 
-__JSON Returns__
+__JSON Return__
+
 ```
 {
     "data": {
@@ -96,6 +99,7 @@ __JSON Returns__
 ```
 
 __SAD PATH__
+
 ```
 {
     "errors": [
@@ -114,6 +118,7 @@ __Request__
 `GET /api/v1/users`
 
 __JSON Return__
+
 ```
 {
     "data": [
@@ -148,6 +153,7 @@ __SAD PATH__
 `POST /api/v1/users/:user_id/repos`
 
 __JSON Payload__
+
 ```
 {
     "owner": "string",
@@ -173,6 +179,12 @@ __SAD PATHS__
     ]
 }
 ```
+- Duplicate Entry
+```
+{
+    "error": "Repo already in system"
+}
+```
 
 ### Destroy Repo
 
@@ -181,6 +193,7 @@ __Request__
 `DELETE api/v1/users/:user_id/repos/:id`
 
 __SAD PATH__
+
 ```
 {
     "errors": [
@@ -197,6 +210,7 @@ __SAD PATH__
 `GET /api/v1/users/:user_id/repos/:id`
 
 __JSON Return__
+
 ```
 {
     "data": {
@@ -207,13 +221,14 @@ __JSON Return__
             "user": "string",
             "owner": "github owner's name",
             "name": "repo's name",
-            "covered_percent": "calculated upon creating repo"
+            "covered_percent": "xx.xx%"
         }
     }
 }
 ```
 
 __SAD PATH__
+
 ```
 {
     "error": "Coverage file not found."
@@ -222,9 +237,10 @@ __SAD PATH__
 
 ### Index Repos
 
-`GET /api/v1/users/:user_id/repos/`
+`GET /api/v1/users/:user_id/repos`
 
 __JSON Return__
+
 ```
 [
     {
@@ -244,7 +260,7 @@ __JSON Return__
                 "user": "string",
                 "owner": "repo owner",
                 "name": "repo name",
-                "covered_percent": "86.05%"
+                "covered_percent": "xx.xx%"
             }
         }
     }
@@ -264,12 +280,14 @@ _Creating acheivements is not currently supported by the frontend_
 `POST /api/v1/achievements`
 
 __JSON Payload__
+
 ```
 {
     "name": "string",
     "criteria": "string"
 }
 ```
+
 __SAD PATHS__
 
 - Missing Param: Name
@@ -286,6 +304,12 @@ __SAD PATHS__
     "criteria": [
         "can't be blank"
     ]
+}
+```
+- Duplicate Entry
+```
+{
+    "error": "Achievement already in system"
 }
 ```
 
@@ -324,3 +348,7 @@ __JSON Return__
         }
     ]
 }
+```
+__Sad Path__
+
+- N/A

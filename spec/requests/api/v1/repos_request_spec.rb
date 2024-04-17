@@ -78,7 +78,7 @@ RSpec.describe "Api::V1::Repos", type: :request do
       headers = {"CONTENT_TYPE" => "application/json"}
 
       expect(response).to_not be_successful
-      expect(response).to have_http_status(401)
+      expect(response).to have_http_status(422)
     end
 
     it 'sad path- repo already exists' do
@@ -93,8 +93,8 @@ RSpec.describe "Api::V1::Repos", type: :request do
       headers = {"CONTENT_TYPE" => "application/json"}
 
       expect(response).to_not be_successful
-      expect(response).to have_http_status(401)
-      expect(response.body).to include("Repo already exists.")
+      expect(response).to have_http_status(400)
+      expect(response.body).to include("Repo already in system")
     end
   end
 

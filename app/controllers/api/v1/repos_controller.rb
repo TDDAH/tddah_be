@@ -34,14 +34,14 @@ class Api::V1::ReposController < ApplicationController
     user = User.find(params[:user_id])
 
     if user.repos.exists?(owner: repo_params[:owner], name: repo_params[:name])
-      render json: { error: "Repo already exists." }, status: :unauthorized
+      render json: { error: "Repo already in system" }, status: :bad_request
     else
       repo = user.repos.new(repo_params)
 
       if repo.save
         render json: repo, status: :created
       else
-        render json: repo.errors, status: :unauthorized
+        render json: repo.errors, status: :unprocessable_entity
       end
     end
   end
@@ -50,12 +50,8 @@ class Api::V1::ReposController < ApplicationController
   def destroy
     user = User.find(params[:user_id])
     repo = user.repos.find(params[:id])
-    
-    if repo.nil?
-      render json: { error: "Repo not found." }, status: :not_found
-    else
-      repo.destroy!
-    end
+
+    repo.destroy!
   end
 
   private

@@ -11,14 +11,14 @@ class Api::V1::AchievementsController < ApplicationController
     existing_achievement = Achievement.find_by(name: achievement_params[:name], criteria: achievement_params[:criteria])
 
     if existing_achievement
-      render json: { error: "This achievement is already in the system." }, status: :unauthorized
+      render json: { error: "Achievement already in system" }, status: :bad_request
     else
       achievement = Achievement.new(achievement_params)
 
       if achievement.save
         render json: achievement, status: :created
       else
-        render json: achievement.errors, status: :unauthorized
+        render json: achievement.errors, status: :unprocessable_entity
       end
     end
   end

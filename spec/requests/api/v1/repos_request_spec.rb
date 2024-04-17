@@ -3,9 +3,10 @@ require "rails_helper"
 RSpec.describe "Api::V1::Repos", type: :request do
 
   before(:each) do
-    @user = User.create!(name: "snash", email: "turing@example.com", password: "ott123", password_confirmation: "ott123")  
+    @user = User.create!(name: "snash", email: "turing@example.com", password: "ott123", password_confirmation: "ott123")
     @repo = @user.repos.create!(owner: "s2an", name: "lunch_and_learn_be_7")
     @repo2 = @user.repos.create!(owner: "delaneymiranda1", name: "lunch_and_learn")
+    @repo3 = @user.repos.create!(owner: "delaneymiranda1", name: "hangman")
   end
 
   describe "Repos Index" do
@@ -20,6 +21,21 @@ RSpec.describe "Api::V1::Repos", type: :request do
       expect(response.body).to include("delaneymiranda1")
       expect(response.body).to include("lunch_and_learn")
       expect(response.body).to include("98.21")
+    end
+
+    it 'does not display repos that do not have coverage file' do
+      get api_v1_user_repos_path(@user)
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
+      expect(response.body).to include("snash")
+      expect(response.body).to include("lunch_and_learn_be_7")
+      expect(response.body).to include("s2an")
+      expect(response.body).to include("86.05")
+      expect(response.body).to include("delaneymiranda1")
+      expect(response.body).to include("lunch_and_learn")
+      expect(response.body).to include("98.21")
+      expect(response.body).to_not include("hangman")
+      expect(response.body).to include("Coverage file not found.")
     end
   end
   
@@ -79,6 +95,7 @@ RSpec.describe "Api::V1::Repos", type: :request do
 
       expect(response).to_not be_successful
       expect(response).to have_http_status(422)
+      expect(response.body).to include("{\"owner\":[\"can't be blank\"]}")
     end
 
     it 'sad path- repo already exists' do
@@ -100,25 +117,25 @@ RSpec.describe "Api::V1::Repos", type: :request do
 
   describe "Repos destroy" do
     it 'deletes a users repo' do
-      expect(Repo.count).to eq(2)
+      expect(Repo.count).to eq(3)
 
       delete api_v1_user_repo_path(@user, @repo)
 
       expect(response).to be_successful
-      expect(Repo.count).to eq(1)
+      expect(Repo.count).to eq(2)
       expect{Repo.find(@repo.id)}.to raise_error(ActiveRecord::RecordNotFound)
     end
 
     it 'sad path- repo not found' do
-      expect(Repo.count).to eq(2)
+      expect(Repo.count).to eq(3)
 
-      non_existing_repo_id = @repo2.id + 1
+      non_existing_repo_id = @repo3.id + 1
 
       delete api_v1_user_repo_path(@user, non_existing_repo_id)
 
-      expect(Repo.count).to eq(2)
+      expect(Repo.count).to eq(3)
       expect(response).to_not be_successful
-      expect(response.body).to include("{\"errors\":[{\"status\":404,\"title\":\"Couldn't find Repo with 'id'=#{@repo2.id + 1} [WHERE \\\"repos\\\".\\\"user_id\\\" = $1]\"}]}")
+      expect(response.body).to include("{\"errors\":[{\"status\":404,\"title\":\"Couldn't find Repo with 'id'=#{@repo3.id + 1} [WHERE \\\"repos\\\".\\\"user_id\\\" = $1]\"}]}")
     end
   end
 end

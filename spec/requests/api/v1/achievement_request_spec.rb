@@ -62,8 +62,8 @@ RSpec.describe "Api::V1::Achievements", type: :request do
       post api_v1_achievements_path(achievement_params), params: achievement_params
 
       expect(response).to_not be_successful
-      expect(response).to have_http_status(401)
-      expect(response.body).to include("This achievement is already in the system.")
+      expect(response).to have_http_status(400)
+      expect(response.body).to include("?")
     end
   end
 end

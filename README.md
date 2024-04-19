@@ -83,6 +83,8 @@ __Achievements__
 - name
 - description
 
+![DB SCHEMA](/Users/mirandadelaney/Desktop/tddahdbschema.png)
+
 ## Contributors
 
 __Backend Team__

@@ -41,39 +41,47 @@ More information regarding the frontend can be found on GitHub: [tddah-fe](https
 
 ### Code of Conduct
 
-TDDAH! embraces the Contributor Covenant Code of Conduct, which is outlined in the root directory, CODE_OF_CONDUCT.md
+TDDAH! embraces the Contributor Covenant Code of Conduct, which is outlined in `./CODE_OF_CONDUCT.md`
 
 ### Installation / Running the App
 
 While not necessary for the average user, the backend can be interacted in the following manner:
 
-1. Clone the repository `git clone git@github.com:TDDAH/tddah_be.git`
+1. Clone the repository
+- `git clone git@github.com:TDDAH/tddah_be.git`
 
-1. Navigate to the project directory `cd tddah_be`
+2. Navigate to the project directory
+- `cd tddah_be`
 
-1. Install the required gems `bundle install`
+3. Install the required gems
+- `bundle install`
 
-1. Create / Migrate the database `rails db:{create,migrate}`
+4. Create / Migrate the database
+- `rails db:{create,migrate}`
 
-1. Start the rails server `rails s`
+5. Start the rails server
+- `rails s`
 
 ### Testing
 
-- Testing (through RSpec) is achieved through the following terminal command:
-
-  `bundle exec rspec`
+1. Testing (through RSpec) is achieved through the following terminal command:
+- `bundle exec rspec`
 
 ## Endpoints
 
-See ./BACKEND_CONTRACT.md
+See `./BACKEND_CONTRACT.md`
 
 ## Database Schema
+
+![DB SCHEMA](<Screenshot 2024-04-16 at 1.38.04 PM.png>)
 
 __User__
 - name
 - email
 - password
 - password_confirmation
+- provider
+- uid
 
 __Repo__
 - owner
@@ -82,8 +90,6 @@ __Repo__
 __Achievements__
 - name
 - description
-
-![DB SCHEMA](/Users/mirandadelaney/Desktop/tddahdbschema.png)
 
 ## Contributors
 

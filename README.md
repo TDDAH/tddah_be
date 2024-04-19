@@ -6,7 +6,7 @@ TDDAH! introduces a new approach to learning and practicing Test-Driven Developm
 
 ### Requirements
 
-Currently the only supported repo need to meet the following requirements
+Currently the only supported repos need to meet the following requirements
 
 - Ruby
 - Rails
